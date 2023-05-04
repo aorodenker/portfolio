@@ -8,8 +8,8 @@ const App = () => {
     <>
     <Perf position="top-left" />
     <OrbitControls makeDefault />
-    <pointLight position={[0, 0, 0]} intensity={2} />
-    <ambientLight intensity={0.01} />
+    <pointLight color="white" position={[0, 0, 0]} intensity={0.5} distance={3000} />
+    {/* <ambientLight intensity={0.1} /> */}
 
     <Environment background files={[...starAssets]} blur={0.2} />
     <Planets />

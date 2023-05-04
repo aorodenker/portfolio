@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         fov: 50,
         near: 0.1,
         far: 5000,
-        position: [-90, 140, 140]
+        position: [-70, 60, -200]
       }}
     >
       <App />

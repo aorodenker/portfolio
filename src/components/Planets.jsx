@@ -47,18 +47,18 @@ const Planets = () => {
     };
     zoomHandler(planet);
 
-    // const camera = state.camera;
-    // const mesh = planetsRef.current.children[4];
-    // const distance = 5;
+    const camera = state.camera;
+    const mesh = planetsRef.current.children[3];
+    const distance = 5;
 
-    // const position = mesh.position.clone();
-    // position.z += distance;
+    const position = mesh.position.clone();
+    position.z += distance;
 
-    // const lookAt = mesh.position.clone();
-    // lookAt.x += 2;
+    const lookAt = mesh.position.clone();
+    lookAt.x += 2;
 
-    // camera.position.copy(position);
-    // camera.lookAt(lookAt);
+    camera.position.copy(position);
+    camera.lookAt(lookAt);
   });
 
   return (
@@ -68,13 +68,12 @@ const Planets = () => {
       <mesh position-x={0} onClick={() => setPlanet(0)} >
         <sphereGeometry args={[sunSize / 5, 30, 30]} />
         <PlanetConstructor
-          receiveShadow
           map={sunLoader[0]}
           displacementMap={sunLoader[1]}
           emissiveMap={sunLoader[2]}
           normalMap={sunLoader[3]}
           aoMap={sunLoader[4]}
-          emissive="red"
+          emissive="white"
           emissiveIntensity={2}
           aoMapIntensity={10}
         />
@@ -83,11 +82,11 @@ const Planets = () => {
       <mesh position-x={29} onClick={() => setPlanet(1)} >
         <sphereGeometry args={[sunSize * 0.0038, 30, 30]} />
         <PlanetConstructor
-          receiveShadow
           map={mercuryLoader[0]}
           displacementMap={mercuryLoader[1]}
           normalMap={mercuryLoader[2]}
           aoMap={mercuryLoader[3]}
+          normalScale={5}
           displacementScale={0.05}
         />
       </mesh>
@@ -95,7 +94,6 @@ const Planets = () => {
       <mesh position-x={54} onClick={() => setPlanet(2)} >
         <sphereGeometry args={[sunSize * 0.0095, 30, 30]} />
         <PlanetConstructor
-          receiveShadow
           map={venusLoader[0]}
           displacementMap={venusLoader[1]}
           normalMap={venusLoader[2]}
@@ -105,14 +103,12 @@ const Planets = () => {
       </mesh>
 
       <mesh position-x={75} onClick={() => setPlanet(3)} >
-        <sphereGeometry args={[sunSize * 0.01, 30, 30]} />
+        <sphereGeometry args={[sunSize * 0.01, 100, 100]} />
         <PlanetConstructor
-          receiveShadow
           map={earthLoader[0]}
           displacementMap={earthLoader[1]}
           normalMap={earthLoader[2]}
           aoMap={earthLoader[3]}
-          aoMapIntensity={100}
           displacementScale={0.06}
         />
       </mesh>
@@ -120,7 +116,6 @@ const Planets = () => {
       <mesh position-x={114} onClick={() => setPlanet(4)} >
         <sphereGeometry args={[sunSize * 0.0053, 30, 30]} />
         <PlanetConstructor
-          receiveShadow
           map={marsLoader[0]}
           displacementMap={marsLoader[1]}
           normalMap={marsLoader[2]}
@@ -130,9 +125,8 @@ const Planets = () => {
       </mesh>
 
       <mesh position-x={389.5} onClick={() => setPlanet(5)} >
-        <sphereGeometry args={[sunSize * 0.1121, 30, 30]} />
+        <sphereGeometry args={[sunSize * 0.1121, 100, 100]} />
         <PlanetConstructor
-          receiveShadow
           map={jupiterLoader[0]}
           displacementMap={jupiterLoader[1]}
           normalMap={jupiterLoader[2]}
@@ -143,7 +137,6 @@ const Planets = () => {
       <mesh position-x={717} onClick={() => setPlanet(6)} >
         <sphereGeometry args={[sunSize * 0.0945, 30, 30]} />
         <PlanetConstructor
-          receiveShadow
           map={saturnLoader[0]}
           displacementMap={saturnLoader[1]}
           normalMap={saturnLoader[2]}
@@ -153,7 +146,6 @@ const Planets = () => {
       <mesh position-x={717} rotation-x={-0.5 * Math.PI} >
         <ringGeometry args={[15, 25, 32]} />
         <meshStandardMaterial
-          receiveShadow
           color="#966d36"
           displacementMap={saturnRingLoader[1]}
           normalMap={saturnRingLoader[2]}
@@ -165,7 +157,6 @@ const Planets = () => {
       <mesh position-x={1436.5} onClick={() => setPlanet(8)} >
         <sphereGeometry args={[sunSize * 0.0401, 30, 30]} />
         <PlanetConstructor
-          receiveShadow
           map={uranusLoader[0]}
           displacementMap={uranusLoader[1]}
           normalMap={uranusLoader[2]}
@@ -175,7 +166,6 @@ const Planets = () => {
       <mesh position-x={1436.5} rotation-x={-0.25 * Math.PI} >
         <ringGeometry args={[9, 10, 32]} />
         <meshStandardMaterial
-          receiveShadow
           map={uranusRingLoader[0]}
           displacementMap={uranusRingLoader[1]}
           normalMap={uranusRingLoader[2]}
@@ -186,7 +176,6 @@ const Planets = () => {
       <mesh position-x={2247.5} onClick={() => setPlanet(10)} >
         <sphereGeometry args={[sunSize * 0.0388, 30, 30]} />
         <PlanetConstructor
-          receiveShadow
           map={neptuneLoader[0]}
           displacementMap={neptuneLoader[1]}
           normalMap={neptuneLoader[2]}
@@ -197,7 +186,6 @@ const Planets = () => {
       <mesh position-x={2247.5} onClick={() => setPlanet(11)} >
         <sphereGeometry args={[sunSize * 0.0018, 30, 30]} />
         <PlanetConstructor
-          receiveShadow
           map={plutoLoader[0]}
           displacementMap={plutoLoader[1]}
           normalMap={plutoLoader[2]}

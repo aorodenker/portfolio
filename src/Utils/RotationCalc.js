@@ -2,7 +2,7 @@ const rotationCalc = (delta, ref) => {
   const eRotation = 7.292e-5 * 3600; // 1 second = 1 hour
 
   ref[0].rotation.y -= delta * (eRotation);
-  ref[1].rotation.y += delta * (eRotation / 58.6);
+  ref[1].rotation.y += delta * (eRotation);
   ref[2].rotation.y += delta * (eRotation / 243);
   ref[3].rotation.y += delta * eRotation;
   ref[4].rotation.y += delta * (eRotation / 1.03);
