@@ -68,17 +68,28 @@ const plutoAssets = [
   'planets/pluto/plutoNormal.jpg',
   'planets/pluto/plutoAo.jpg'
 ];
+
 const saturnRingAssets = [
   'planets/saturn/ring/saturnRingColor.jpg',
   'planets/saturn/ring/saturnRingDisplacement.jpg',
   'planets/saturn/ring/saturnRingNormal.jpg',
   'planets/saturn/ring/saturnRingAo.jpg'
 ];
+
 const uranusRingAssets = [
   'planets/uranus/ring/uranusRingColor.jpg',
   'planets/uranus/ring/uranusRingDisplacement.jpg',
   'planets/uranus/ring/uranusRingNormal.jpg',
   'planets/uranus/ring/uranusRingAo.jpg'
+];
+
+const starAssets = [
+  'space/px.png',
+  'space/nx.png',
+  'space/py.png',
+  'space/ny.png',
+  'space/pz.png',
+  'space/nz.png'
 ];
 
 export {
@@ -93,5 +104,6 @@ export {
   neptuneAssets,
   plutoAssets,
   saturnRingAssets,
-  uranusRingAssets
+  uranusRingAssets,
+  starAssets
 };
