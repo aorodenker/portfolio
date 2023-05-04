@@ -1,9 +1,9 @@
 const sunAssets = [
   'planets/sun/sunColor.jpg',
-  'planets/sun2/sunDisplacement.jpg',
+  'planets/sun/sunDisplacement.jpg',
   'planets/sun/sunEmissive.jpg',
-  'planets/sun2/sunNormal.jpg',
-  'planets/sun2/sunAo.jpg',
+  'planets/sun/sunNormal.jpg',
+  'planets/sun/sunAo.jpg',
 ];
 
 const mercuryAssets = [
