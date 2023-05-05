@@ -1,44 +1,35 @@
 const zoomHandler = (state, delta, idx, ref, distance) => {
     const camera = state.camera;
     const mesh = ref[idx];
-    let offsetZ, offsetX;
+    let offsetZ;
 
     switch(idx) {
       case 1:
-        offsetZ = 5;
-        offsetX = 2;
+        offsetZ = 10;
         break;
       case 2:
-        offsetZ = 5;
-        offsetX = 2;
+        offsetZ = 20;
         break;
       case 3:
         offsetZ = 20;
-        offsetX = 2;
         break;
       case 4:
-        offsetZ = 5;
-        offsetX = 2;
+        offsetZ = 15;
         break;
       case 5:
-        offsetZ = 5;
-        offsetX = 2;
+        offsetZ = 150;
         break;
       case 6:
-        offsetZ = 5;
-        offsetX = 2;
+        offsetZ = 150;
         break;
       case 7:
-        offsetZ = 5;
-        offsetX = 2;
+        offsetZ = 50;
         break;
       case 8:
-        offsetZ = 5;
-        offsetX = 2;
+        offsetZ = 50;
         break;
       case 9:
-        offsetZ = 5;
-        offsetX = 2;
+        offsetZ = 10;
         break;
     };
 
@@ -51,7 +42,7 @@ const zoomHandler = (state, delta, idx, ref, distance) => {
     position.y += offsetZ / 4;
 
     const lookAt = mesh.position.clone();
-    lookAt.x += offsetX;
+    lookAt.x += offsetZ * 0.2;
 
     camera.position.copy(position);
     camera.lookAt(lookAt);

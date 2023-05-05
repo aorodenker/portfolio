@@ -1,7 +1,7 @@
 const orbitCalc = (state, ref) => {
   const standardAngle = state.clock.getElapsedTime() * 50;
 
-  const merAngle = standardAngle / 88;
+  const merAngle = standardAngle / 150;
   const vAngle = standardAngle / 225;
   const eAngle = standardAngle / 365;
   const marAngle = standardAngle / 687;

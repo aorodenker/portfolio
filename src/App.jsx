@@ -1,7 +1,7 @@
 import { OrbitControls, Environment } from '@react-three/drei';
 import { Perf } from 'r3f-perf';
+import { starAssets } from './Utils/starAssets.js';
 import Planets from './components/Planets';
-import { starAssets } from './Utils/maps.js';
 
 const App = () => {
   return(

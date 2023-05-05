@@ -1,26 +1,9 @@
 import { useRef, useState, useEffect } from 'react';
-import { TextureLoader } from 'three';
-import { useFrame, useLoader, useThree } from '@react-three/fiber';
-import { useGLTF, Decal } from '@react-three/drei';
-import PlanetConstructor from '../Utils/PlanetConstructor';
+import { useFrame, useThree } from '@react-three/fiber';
+import { useGLTF } from '@react-three/drei';
 import rotationCalc from '../Utils/rotationCalc.js';
 import orbitCalc from '../Utils/orbitCalc.js';
 import zoomHandler from '../Utils/zoomHandler.js';
-import {
-  sunAssets,
-  mercuryAssets,
-  venusAssets,
-  earthAssets,
-  marsAssets,
-  jupiterAssets,
-  saturnAssets,
-  uranusAssets,
-  neptuneAssets,
-  plutoAssets,
-  saturnRingAssets,
-  uranusRingAssets
-} from '../Utils/maps.js';
-import * as THREE from 'three';
 
 
 
@@ -43,7 +26,6 @@ const Planets = () => {
   const plutoModel = useGLTF('glb/pluto.glb');
 
   useFrame((state, delta) => {
-    console.log(planetsRef.current.children[6].children[0].children[0].children[0].children[1].children[0])
     if (planetsRef.current) {
       const ref = planetsRef.current.children
       rotationCalc(delta, ref);
@@ -56,12 +38,11 @@ const Planets = () => {
 
   useEffect(() => {
     planetsRef.current.traverse((child) => {
-      if (child.type === 'Mesh' && child.name !== 'pTorus1_aiStandardSurface2_0') {
-        // console.log(child.geometry)
+      if (child.type === 'Mesh') {
         child.material.roughness = 1;
         child.material.metalness = 0;
       };
-    })
+    });
   }, [planetsRef]);
 
   // const clickHandler = (idx) => {
@@ -78,8 +59,8 @@ const Planets = () => {
       <primitive object={earthModel.scene} position-x={100} scale={5} onClick={() => setSelected(3)} />
       <primitive object={marsModel.scene} position-x={120} scale={2} onClick={() => setSelected(4)} />
       <primitive object={jupiterModel.scene} position-x={175} scale={.3} onClick={() => setSelected(5)} />
-      <primitive object={saturnModel.scene} position-x={300} scale={2500} rotation-x={Math.PI / 10} onClick={() => setSelected(6)} />
-      <primitive object={uranusModel.scene} position-x={400} scale={15} onClick={() => setSelected(7)} />
+      <primitive object={saturnModel.scene} position-x={300} scale={2500} rotation-x={- Math.PI / 10} onClick={() => setSelected(6)} />
+      <primitive object={uranusModel.scene} position-x={400} scale={15} rotation-x={Math.PI / 2} onClick={() => setSelected(7)} />
       <primitive object={neptuneModel.scene} position-x={475} scale={0.15} onClick={() => setSelected(8)} />
       <primitive object={plutoModel.scene} position-x={525} scale={0.02} onClick={() => setSelected(9)} />
     </group>
