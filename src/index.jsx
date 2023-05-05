@@ -7,11 +7,12 @@ import './styles.css';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Canvas
+      shadows={true}
       camera={{
         fov: 50,
         near: 0.1,
         far: 5000,
-        position: [-70, 60, -200]
+        position: [-273, 244, -176],
       }}
     >
       <App />
