@@ -4,10 +4,16 @@ html, body, #root {
   left: 0;
   width: 100%;
   height: 100%;
+  background: black;
 }
 
 canvas {
   touch-action: none;
+}
+
+.navbar-brand, .navbar-brand:hover {
+  color: #ffffff !important;
+  cursor: default;
 }
 
 .htmlScreen {
@@ -19,9 +25,6 @@ canvas {
   z-index: 9999;
   padding: 2%;
   color: beige;
-  /* background: grey;
-  border-radius: 1%;
-  border-style: solid; */
   background: none;
 }
 
