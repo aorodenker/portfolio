@@ -47,9 +47,9 @@ const Navigation = ({ setSelected, setContent, setHidden }) => {
             Links
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a className="dropdown-item">LinkedIn</a>
-              <a className="dropdown-item">Github</a>
-              <a className="dropdown-item">Email</a>
+              <a className="dropdown-item" href="https://www.linkedin.com/in/orodenker/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a className="dropdown-item" href="https://www.github.com/aorodenker" target="_blank" rel="noopener noreferrer">Github</a>
+              <a className="dropdown-item" href="mailto:andrew.orodenker@gmail.com?subject=Hello!" target="_blank" rel="noopener noreferrer">Email</a>
             </div>
           </li>
         </ul>

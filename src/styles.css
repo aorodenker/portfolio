@@ -18,9 +18,11 @@ canvas {
   max-width: 600px;
   z-index: 9999;
   padding: 2%;
-  background: grey;
+  color: beige;
+  /* background: grey;
   border-radius: 1%;
-  border-style: solid;
+  border-style: solid; */
+  background: none;
 }
 
 @media (min-width: 2000px) {
@@ -51,19 +53,20 @@ canvas {
 }
 
 h2 {
+  color: beige;
   padding-top: 2rem;
   padding-bottom: 2rem;
   text-align: center;
   text-decoration: none;
 }
 
-h2, a {
-  color: black;
+a, a h2 {
+  color: beige;
   text-decoration: none;
 }
 
-h2:hover, a:hover {
-  color: white;
+a h2:hover, a:hover {
+  color: blue;
   text-decoration: none;
   cursor:pointer;
 }
