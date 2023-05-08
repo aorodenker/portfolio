@@ -5,9 +5,10 @@ import rotationCalc from '../Utils/rotationCalc.js';
 import orbitCalc from '../Utils/orbitCalc.js';
 import zoomHandler from '../Utils/zoomHandler.js';
 
-const Planets = ({ selected }) => {
-  const camera = useThree((state) => state.camera);
+const Planets = ({ selected, reset }) => {
+  const { camera, controls } = useThree();
   const originalCamPosition = [-157, 151, -139];
+  const originalCamTarget = [0, 0, 0];
 
   const planetsRef = useRef();
   const sunModel = useGLTF('glb/sun.glb');
@@ -40,8 +41,12 @@ const Planets = ({ selected }) => {
   }, [planetsRef]);
 
   useEffect(() => {
-    selected === 0 ? camera.position.set(...originalCamPosition) : null;
-  }, [selected])
+    if (controls) {
+      camera.position.set(...originalCamPosition);
+      camera.lookAt(...originalCamTarget);
+      controls.reset();
+    };
+  }, [reset]);
 
   return (
     <>

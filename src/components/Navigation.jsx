@@ -1,4 +1,4 @@
-const Navigation = ({ setSelected, setContent, setHidden }) => {
+const Navigation = ({ setSelected, setContent, setHidden, reset, setReset }) => {
 
   const clickHandler = (idx) => {
     setContent(idx);
@@ -6,12 +6,13 @@ const Navigation = ({ setSelected, setContent, setHidden }) => {
   };
   const planetHandler = (planet) => {
     setSelected(planet);
+    setReset(!reset);
     setHidden(true);
   };
 
   return(
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a className="navbar-brand">Andrew Orodenker</a>
+      <a className="navbar-brand" onClick={() => planetHandler(-1)} >Andrew Orodenker</a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -57,7 +58,7 @@ const Navigation = ({ setSelected, setContent, setHidden }) => {
             </div>
           </li>
         </ul>
-        <a className="nav-link ml-auto" onClick={() => setSelected(0)}> Reset Camera </a>
+        <a className="nav-link ml-auto" onClick={() => planetHandler(0)}> Reset Camera </a>
       </div>
     </nav>
   );
