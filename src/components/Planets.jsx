@@ -1,17 +1,15 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 import rotationCalc from '../Utils/rotationCalc.js';
 import orbitCalc from '../Utils/orbitCalc.js';
 import zoomHandler from '../Utils/zoomHandler.js';
 
-
-
 const Planets = ({ selected }) => {
-  const planetsRef = useRef();
   const camera = useThree((state) => state.camera);
   const originalCamPosition = [-157, 151, -139];
 
+  const planetsRef = useRef();
   const sunModel = useGLTF('glb/sun.glb');
   const mercuryModel = useGLTF('glb/mercury.glb');
   const venusModel = useGLTF('glb/venus.glb');
@@ -28,9 +26,7 @@ const Planets = ({ selected }) => {
       const ref = planetsRef.current.children
       rotationCalc(delta, ref);
       orbitCalc(state, ref);
-      if (selected > 0) {
-        zoomHandler(state, delta, selected, ref);
-      };
+      selected > 0 ? zoomHandler(state, delta, selected, ref) : null;
     };
   });
 
@@ -44,9 +40,7 @@ const Planets = ({ selected }) => {
   }, [planetsRef]);
 
   useEffect(() => {
-    if (selected === 0) {
-      camera.position.set(...originalCamPosition);
-    }
+    selected === 0 ? camera.position.set(...originalCamPosition) : null;
   }, [selected])
 
   return (

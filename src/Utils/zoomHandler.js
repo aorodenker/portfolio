@@ -52,27 +52,9 @@ const zoomHandler = (state, delta, idx, ref) => {
   if (dist > offsetZ) {
     currentPos.add(dir.multiplyScalar(amount));
   };
+
   camera.position.copy(currentPos);
   camera.lookAt(mesh.position);
-
-  // const distance = camera.position.distanceTo(mesh.position);
-  // const newDistance = distance - delta * 5;
-  // camera.lookAt(ref[idx].position);
-
-  // if (distance > 50) {
-  //   camera.position.set(0, 0, newDistance);
-  //   console.log(distance)
-  // };
-
-  // const position = mesh.position.clone();
-  // position.z += offsetZ;
-  // position.y += offsetZ / 4;
-
-  // const lookAt = mesh.position.clone();
-  // lookAt.x += offsetZ * 0.2;
-
-  // camera.position.copy(position);
-  // camera.lookAt(lookAt);
 };
 
 export default zoomHandler;

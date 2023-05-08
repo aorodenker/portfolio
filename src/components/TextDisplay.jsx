@@ -1,10 +1,9 @@
-import { Html } from '@react-three/drei';
 import Me from './htmlContent/Me';
 import GymX5000 from './htmlContent/GymX5000';
 import Atelier from './htmlContent/Atelier';
 import CowardlyDogs from './htmlContent/CowardlyDogs';
 
-const TextDisplay = ({ content, setContent, hidden, setHidden }) => {
+const TextDisplay = ({ content, hidden, setHidden }) => {
 
   const contentHandler = () => {
     switch(content) {
