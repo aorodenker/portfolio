@@ -4,6 +4,10 @@ const Navigation = ({ setSelected, setContent, setHidden }) => {
     setContent(idx);
     setHidden(false);
   };
+  const planetHandler = (planet) => {
+    setSelected(planet);
+    setHidden(true);
+  };
 
   return(
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -31,15 +35,15 @@ const Navigation = ({ setSelected, setContent, setHidden }) => {
             Planets
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a className="dropdown-item" onClick={() => setSelected(1)} > Mercury </a>
-              <a className="dropdown-item" onClick={() => setSelected(2)} > Venus </a>
-              <a className="dropdown-item" onClick={() => setSelected(3)} > Earth </a>
-              <a className="dropdown-item" onClick={() => setSelected(4)} > Mars </a>
-              <a className="dropdown-item" onClick={() => setSelected(5)} > Jupiter </a>
-              <a className="dropdown-item" onClick={() => setSelected(6)} > Saturn </a>
-              <a className="dropdown-item" onClick={() => setSelected(7)} > Uranus </a>
-              <a className="dropdown-item" onClick={() => setSelected(8)} > Neptune </a>
-              <a className="dropdown-item" onClick={() => setSelected(9)} > Pluto </a>
+              <a className="dropdown-item" onClick={() => planetHandler(1)} > Mercury </a>
+              <a className="dropdown-item" onClick={() => planetHandler(2)} > Venus </a>
+              <a className="dropdown-item" onClick={() => planetHandler(3)} > Earth </a>
+              <a className="dropdown-item" onClick={() => planetHandler(4)} > Mars </a>
+              <a className="dropdown-item" onClick={() => planetHandler(5)} > Jupiter </a>
+              <a className="dropdown-item" onClick={() => planetHandler(6)} > Saturn </a>
+              <a className="dropdown-item" onClick={() => planetHandler(7)} > Uranus </a>
+              <a className="dropdown-item" onClick={() => planetHandler(8)} > Neptune </a>
+              <a className="dropdown-item" onClick={() => planetHandler(9)} > Pluto </a>
             </div>
           </li>
           <li className="nav-item dropdown">
@@ -53,6 +57,7 @@ const Navigation = ({ setSelected, setContent, setHidden }) => {
             </div>
           </li>
         </ul>
+        <a className="nav-link ml-auto" onClick={() => setSelected(0)}> Reset Camera </a>
       </div>
     </nav>
   );

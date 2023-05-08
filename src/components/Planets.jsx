@@ -10,8 +10,7 @@ import zoomHandler from '../Utils/zoomHandler.js';
 const Planets = ({ selected }) => {
   const planetsRef = useRef();
   const camera = useThree((state) => state.camera);
-
-  let distance;
+  const originalCamPosition = [-157, 151, -139];
 
   const sunModel = useGLTF('glb/sun.glb');
   const mercuryModel = useGLTF('glb/mercury.glb');
@@ -30,7 +29,7 @@ const Planets = ({ selected }) => {
       rotationCalc(delta, ref);
       orbitCalc(state, ref);
       if (selected > 0) {
-        zoomHandler(state, delta, selected, ref, distance);
+        zoomHandler(state, delta, selected, ref);
       };
     };
   });
@@ -44,10 +43,11 @@ const Planets = ({ selected }) => {
     });
   }, [planetsRef]);
 
-  // const clickHandler = (idx) => {
-  //   setSelected(idx);
-  //   distance = camera.position.distanceTo(planetsRef.current.children[idx].position);
-  // };
+  useEffect(() => {
+    if (selected === 0) {
+      camera.position.set(...originalCamPosition);
+    }
+  }, [selected])
 
   return (
     <>
