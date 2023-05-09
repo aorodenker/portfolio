@@ -29,7 +29,7 @@ const App = () => {
     <Navigation planetHandler={planetHandler} setContent={setContent} setHidden={setHidden} />
     <Canvas camera={{ fov: 50, near: 0.1, far: 5000, position: [-157, 151, -139] }} >
       <Suspense fallback={null}>
-        <OrbitControls makeDefault enableRotate={controls} />
+        <OrbitControls makeDefault enableRotate={controls} enableZoom={controls} />
         <pointLight color="white" position={[0, 0, 0]} intensity={1} distance={2000} />
         <ambientLight intensity={0.05} />
         <Environment background files={[...starAssets]} blur={0.2} />
@@ -46,5 +46,7 @@ export default App;
 
 //! FIX:
 // add fun facts to each planet
-// disable orbit controls on planet cam, currently zoom still works
 // media queries for smaller screens
+// change nav color, dark blue? transparent?
+// loading bar fix, custom?
+// move planet to the left if content is displayed? might not need if facts are on planets
