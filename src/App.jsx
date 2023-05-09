@@ -45,4 +45,6 @@ const App = () => {
 export default App;
 
 //! FIX:
-// 7) add fun facts to each planet
+// add fun facts to each planet
+// disable orbit controls on planet cam, currently zoom still works
+// media queries for smaller screens
