@@ -18,16 +18,22 @@ const App = () => {
     selected < 1 ? setControls(true) : setControls(false);
   }, [selected]);
 
+  const planetHandler = (planet) => {
+    setSelected(planet);
+    setReset(!reset);
+    setHidden(true);
+  };
+
   return(
     <>
-    <Navigation setSelected={setSelected} setContent={setContent} setHidden={setHidden} reset={reset} setReset={setReset} />
+    <Navigation planetHandler={planetHandler} setContent={setContent} setHidden={setHidden} />
     <Canvas camera={{ fov: 50, near: 0.1, far: 5000, position: [-157, 151, -139] }} >
       <Suspense fallback={null}>
         <OrbitControls makeDefault enableRotate={controls} />
         <pointLight color="white" position={[0, 0, 0]} intensity={1} distance={2000} />
         <ambientLight intensity={0.05} />
         <Environment background files={[...starAssets]} blur={0.2} />
-        <Planets selected={selected} reset={reset} />
+        <Planets selected={selected} reset={reset} planetHandler={planetHandler} />
       </Suspense>
     </Canvas>
     <Loader />
@@ -39,8 +45,4 @@ const App = () => {
 export default App;
 
 //! FIX:
-// 1) Planets twitch on follow
-// 3) add controls infographic bottom left
-// 5) 'Planets' -> 'Planet Cam'
-// 6) clicking a planet should do everything dropdown does
 // 7) add fun facts to each planet

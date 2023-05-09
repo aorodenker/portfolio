@@ -1,39 +1,44 @@
-const Navigation = ({ setSelected, setContent, setHidden, reset, setReset }) => {
+const Navigation = ({ planetHandler, setContent, setHidden }) => {
 
-  const clickHandler = (idx) => {
+  const contentDisplay = (idx) => {
     setContent(idx);
     setHidden(false);
-  };
-  const planetHandler = (planet) => {
-    setSelected(planet);
-    setReset(!reset);
-    setHidden(true);
   };
 
   return(
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a className="navbar-brand" onClick={() => planetHandler(-1)} >Andrew Orodenker</a>
+      <a className="navbar-brand" onClick={() => planetHandler(0)} >Andrew Orodenker</a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <ul className="navbar-nav">
           <li className="nav-item active">
-            <a className="nav-link" onClick={() => clickHandler(1)}> About Me </a>
+            <a className="nav-link" onClick={() => contentDisplay(1)}> About Me </a>
           </li>
-          <li className="nav-item dropdown">
+          <li className="nav-item dropdown active">
             <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Projects
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a className="dropdown-item" onClick={() => clickHandler(2)} >GymX5000</a>
-              <a className="dropdown-item" onClick={() => clickHandler(3)} >Atelier</a>
-              <a className="dropdown-item" onClick={() => clickHandler(4)} >Cowardly Dogs</a>
+              <a className="dropdown-item" onClick={() => contentDisplay(2)} >GymX5000</a>
+              <a className="dropdown-item" onClick={() => contentDisplay(3)} >Atelier</a>
+              <a className="dropdown-item" onClick={() => contentDisplay(4)} >Cowardly Dogs</a>
             </div>
           </li>
-          <li className="nav-item dropdown">
+          <li className="nav-item dropdown active">
             <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Planets
+            Links
+            </a>
+            <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a className="dropdown-item" href="https://www.linkedin.com/in/orodenker/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a className="dropdown-item" href="https://www.github.com/aorodenker" target="_blank" rel="noopener noreferrer">Github</a>
+              <a className="dropdown-item" href="mailto:andrew.orodenker@gmail.com?subject=Hello!" target="_blank" rel="noopener noreferrer">Email</a>
+            </div>
+          </li>
+          <li className="nav-item dropdown active">
+            <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            PlanetCam
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a className="dropdown-item" onClick={() => planetHandler(1)} > Mercury </a>
@@ -47,18 +52,23 @@ const Navigation = ({ setSelected, setContent, setHidden, reset, setReset }) => 
               <a className="dropdown-item" onClick={() => planetHandler(9)} > Pluto </a>
             </div>
           </li>
-          <li className="nav-item dropdown">
+        </ul>
+        <ul className="ml-auto navbar-nav">
+          <li className="nav-item dropdown active">
             <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Links
+            Controls
             </a>
-            <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a className="dropdown-item" href="https://www.linkedin.com/in/orodenker/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a className="dropdown-item" href="https://www.github.com/aorodenker" target="_blank" rel="noopener noreferrer">Github</a>
-              <a className="dropdown-item" href="mailto:andrew.orodenker@gmail.com?subject=Hello!" target="_blank" rel="noopener noreferrer">Email</a>
+            <div className="dropdown-menu drop" style={{right: '0', left: 'auto'}} aria-labelledby="navbarDropdownMenuLink">
+              <a className="dropdown-item control warn">Controls disabled while using Planet Cam</a>
+              <a className="dropdown-item control">Move Camera: Left Click (Hold)</a>
+              <a className="dropdown-item control">Pan Camera: Right Click (Hold)</a>
+              <a className="dropdown-item control">Zoom: Scroll Wheel</a>
             </div>
           </li>
+            <li className="nav-item active">
+              <a className="nav-link" onClick={() => planetHandler(0)}> Reset Camera </a>
+            </li>
         </ul>
-        <a className="nav-link ml-auto" onClick={() => planetHandler(0)}> Reset Camera </a>
       </div>
     </nav>
   );

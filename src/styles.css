@@ -15,6 +15,21 @@ canvas {
   color: #ffffff !important;
 }
 
+.control {
+  cursor: default !important;
+}
+
+.warn, .warn:hover {
+  background: rgb(240, 253, 62);
+  font-size: smaller;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 0.25rem;
+}
+
+.drop {
+  padding-top: 0;
+}
+
 .htmlScreen {
   position: absolute;
   top: 10%;
