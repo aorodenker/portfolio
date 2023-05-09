@@ -40,9 +40,7 @@ export default App;
 
 //! FIX:
 // 1) Planets twitch on follow
-// 2) clicking Andrew Orodenker should reset camera
 // 3) add controls infographic bottom left
-// 4) camera reset doesn't work after pan
 // 5) 'Planets' -> 'Planet Cam'
 // 6) clicking a planet should do everything dropdown does
 // 7) add fun facts to each planet

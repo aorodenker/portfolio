@@ -10,7 +10,7 @@ const zoomHandler = (state, delta, idx, ref) => {
       break;
     case 2:
       offsetZ = 20;
-      speed = 0.5;
+      speed = 0.6;
       break;
     case 3:
       offsetZ = 20;
@@ -18,23 +18,23 @@ const zoomHandler = (state, delta, idx, ref) => {
       break;
     case 4:
       offsetZ = 15;
-      speed = 0.5;
+      speed = 0.4;
       break;
     case 5:
       offsetZ = 150;
-      speed = 0.2;
+      speed = 0.1;
       break;
     case 6:
       offsetZ = 150;
-      speed = 0.2;
+      speed = 0.1;
       break;
     case 7:
-      offsetZ = 50;
-      speed = 0.5;
+      offsetZ = 80;
+      speed = 0.1;
       break;
     case 8:
-      offsetZ = 50;
-      speed = 0.5;
+      offsetZ = 80;
+      speed = 0.1;
       break;
     case 9:
       offsetZ = 2;
@@ -51,7 +51,9 @@ const zoomHandler = (state, delta, idx, ref) => {
 
   if (dist > offsetZ) {
     currentPos.add(dir.multiplyScalar(amount));
-  };
+  } else {
+    currentPos.add(dir.multiplyScalar(amount / 100));
+  }
 
   camera.position.copy(currentPos);
   camera.lookAt(mesh.position);

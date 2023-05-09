@@ -41,7 +41,7 @@ const Planets = ({ selected, reset }) => {
   }, [planetsRef]);
 
   useEffect(() => {
-    if (controls) {
+    if (controls && selected === 0) {
       camera.position.set(...originalCamPosition);
       camera.lookAt(...originalCamTarget);
       controls.reset();
@@ -58,7 +58,7 @@ const Planets = ({ selected, reset }) => {
       <primitive object={marsModel.scene} position-x={120} scale={2} />
       <primitive object={jupiterModel.scene} position-x={175} scale={.3} />
       <primitive object={saturnModel.scene} position-x={300} scale={2500} rotation-x={- Math.PI / 10} />
-      <primitive object={uranusModel.scene} position-x={400} scale={15} rotation-x={Math.PI / 2} />
+      <primitive object={uranusModel.scene} position-x={400} scale={15} />
       <primitive object={neptuneModel.scene} position-x={475} scale={0.15} />
       <primitive object={plutoModel.scene} position-x={525} scale={0.02} />
     </group>
