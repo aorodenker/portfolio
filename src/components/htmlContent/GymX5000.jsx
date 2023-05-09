@@ -1,10 +1,10 @@
-const GymX5000 = ({ setHidden }) => {
+const GymX5000 = ({ setHidden, navCollapsed }) => {
   return(
-    <div className="htmlScreen" >
-      <img className="close-html" src="/content/close.png" onClick={() => setHidden(true)} />
-      <a href="https://github.com/Slytherin-Blue-Ocean/GymX5000" target="_blank" rel="noopener noreferrer">
+    <div className={ navCollapsed ? "htmlScreen" : "htmlScreen re-align" } >
+      <img className="close-html" src="/content/hide.svg" onClick={() => setHidden(true)} />
+      <a className="project-link" href="https://github.com/Slytherin-Blue-Ocean/GymX5000" target="_blank" rel="noopener noreferrer">
         <img className="gymX" src="/content/gymX.jpg" />
-        <h2>
+        <h2 className="project-title">
           GymX5000
         </h2>
       </a>

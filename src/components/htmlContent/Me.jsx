@@ -1,9 +1,9 @@
-const Me = ({ setHidden }) => {
+const Me = ({ setHidden, navCollapsed }) => {
   return(
-    <div className="htmlScreen" >
-      <img className="close-html" src="/content/close.png" onClick={() => setHidden(true)} />
+    <div className={ navCollapsed ? "htmlScreen" : "htmlScreen re-align" } >
+      <img className="close-html" src="/content/hide.svg" onClick={() => setHidden(true)} />
       <img className="me" src="/content/me.jpg" />
-      <h2>
+      <h2 className="my-name">
         Hi, I'm Andrew Orodenker
       </h2>
       <p>

@@ -1,9 +1,9 @@
-const Atelier = ({ setHidden }) => {
+const Atelier = ({ setHidden, navCollapsed }) => {
   return(
-    <div className="htmlScreen" >
-      <img className="close-html" src="/content/close.png" onClick={() => setHidden(true)} />
-      <a href="https://github.com/LinkSDC/productsSDC" target="_blank" rel="noopener noreferrer">
-        <h2>
+    <div className={ navCollapsed ? "htmlScreen" : "htmlScreen re-align" } >
+      <img className="close-html" src="/content/hide.svg" onClick={() => setHidden(true)} />
+      <a className="project-link" href="https://github.com/LinkSDC/productsSDC" target="_blank" rel="noopener noreferrer">
+        <h2 className="project-title">
           Atelier
         </h2>
       </a>

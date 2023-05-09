@@ -1,4 +1,4 @@
-const Navigation = ({ planetHandler, setContent, setHidden }) => {
+const Navigation = ({ planetHandler, setContent, setHidden, navCollapsed, setNavCollapsed }) => {
 
   const contentDisplay = (idx) => {
     setContent(idx);
@@ -6,7 +6,7 @@ const Navigation = ({ planetHandler, setContent, setHidden }) => {
   };
 
   return(
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav className="navbar navbar-expand-lg navbar-dark fixed-top" onClick={() => setNavCollapsed(!navCollapsed)}>
       <a className="navbar-brand" onClick={() => planetHandler(0)} >Andrew Orodenker</a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -21,9 +21,9 @@ const Navigation = ({ planetHandler, setContent, setHidden }) => {
             Projects
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a className="dropdown-item" onClick={() => contentDisplay(2)} >GymX5000</a>
-              <a className="dropdown-item" onClick={() => contentDisplay(3)} >Atelier</a>
-              <a className="dropdown-item" onClick={() => contentDisplay(4)} >Cowardly Dogs</a>
+              <a className="dropdown-item drop-item" onClick={() => contentDisplay(2)} >GymX5000</a>
+              <a className="dropdown-item drop-item" onClick={() => contentDisplay(3)} >Atelier</a>
+              <a className="dropdown-item drop-item" onClick={() => contentDisplay(4)} >Cowardly Dogs</a>
             </div>
           </li>
           <li className="nav-item dropdown active">
@@ -31,9 +31,9 @@ const Navigation = ({ planetHandler, setContent, setHidden }) => {
             Links
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a className="dropdown-item" href="https://www.linkedin.com/in/orodenker/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a className="dropdown-item" href="https://www.github.com/aorodenker" target="_blank" rel="noopener noreferrer">Github</a>
-              <a className="dropdown-item" href="mailto:andrew.orodenker@gmail.com?subject=Hello!" target="_blank" rel="noopener noreferrer">Email</a>
+              <a className="dropdown-item drop-item" href="https://www.linkedin.com/in/orodenker/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a className="dropdown-item drop-item" href="https://www.github.com/aorodenker" target="_blank" rel="noopener noreferrer">Github</a>
+              <a className="dropdown-item drop-item" href="mailto:andrew.orodenker@gmail.com?subject=Hello!" target="_blank" rel="noopener noreferrer">Email</a>
             </div>
           </li>
           <li className="nav-item dropdown active">
@@ -41,15 +41,15 @@ const Navigation = ({ planetHandler, setContent, setHidden }) => {
             PlanetCam
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a className="dropdown-item" onClick={() => planetHandler(1)} > Mercury </a>
-              <a className="dropdown-item" onClick={() => planetHandler(2)} > Venus </a>
-              <a className="dropdown-item" onClick={() => planetHandler(3)} > Earth </a>
-              <a className="dropdown-item" onClick={() => planetHandler(4)} > Mars </a>
-              <a className="dropdown-item" onClick={() => planetHandler(5)} > Jupiter </a>
-              <a className="dropdown-item" onClick={() => planetHandler(6)} > Saturn </a>
-              <a className="dropdown-item" onClick={() => planetHandler(7)} > Uranus </a>
-              <a className="dropdown-item" onClick={() => planetHandler(8)} > Neptune </a>
-              <a className="dropdown-item" onClick={() => planetHandler(9)} > Pluto </a>
+              <a className="dropdown-item drop-item" onClick={() => planetHandler(1)} > Mercury </a>
+              <a className="dropdown-item drop-item" onClick={() => planetHandler(2)} > Venus </a>
+              <a className="dropdown-item drop-item" onClick={() => planetHandler(3)} > Earth </a>
+              <a className="dropdown-item drop-item" onClick={() => planetHandler(4)} > Mars </a>
+              <a className="dropdown-item drop-item" onClick={() => planetHandler(5)} > Jupiter </a>
+              <a className="dropdown-item drop-item" onClick={() => planetHandler(6)} > Saturn </a>
+              <a className="dropdown-item drop-item" onClick={() => planetHandler(7)} > Uranus </a>
+              <a className="dropdown-item drop-item" onClick={() => planetHandler(8)} > Neptune </a>
+              <a className="dropdown-item drop-item" onClick={() => planetHandler(9)} > Pluto </a>
             </div>
           </li>
         </ul>
@@ -59,10 +59,10 @@ const Navigation = ({ planetHandler, setContent, setHidden }) => {
             Controls
             </a>
             <div className="dropdown-menu drop" style={{right: '0', left: 'auto'}} aria-labelledby="navbarDropdownMenuLink">
-              <a className="dropdown-item control warn">Controls disabled while using Planet Cam</a>
-              <a className="dropdown-item control">Move Camera: Left Click (Hold)</a>
-              <a className="dropdown-item control">Pan Camera: Right Click (Hold)</a>
-              <a className="dropdown-item control">Zoom: Scroll Wheel</a>
+              <a className="dropdown-item control-item warn">Disabled while using Planet Cam</a>
+              <a className="dropdown-item control-item">Move Camera: Left Click (Hold)</a>
+              <a className="dropdown-item control-item">Pan Camera: Right Click (Hold)</a>
+              <a className="dropdown-item control-item">Zoom: Scroll Wheel</a>
             </div>
           </li>
             <li className="nav-item active">
