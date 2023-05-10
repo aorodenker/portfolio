@@ -5,6 +5,7 @@ import { starAssets } from './Utils/starAssets.js';
 import Planets from './components/Planets';
 import TextDisplay from './components/TextDisplay';
 import Navigation from './components/Navigation';
+import Controls from './components/Controls';
 
 const App = () => {
   const [selected, setSelected] = useState(0);
@@ -38,6 +39,7 @@ const App = () => {
     </Canvas>
     <Loader />
     <TextDisplay content={content} hidden={hidden} setHidden={setHidden} navCollapsed={navCollapsed} />
+    <Controls selected={selected} />
     </>
   );
 };
@@ -45,8 +47,8 @@ const App = () => {
 export default App;
 
 //! FIX:
-// add fun facts to each planet
 // loading bar fix, custom?
+// add technologies used for each project
+// add fun facts to each planet
 // move planet to the left if content is displayed? might not need if facts are on planets
 // carousel for projects
-// add technologies used for each project
