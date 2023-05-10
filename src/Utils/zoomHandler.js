@@ -40,7 +40,7 @@ const zoomHandler = (state, delta, idx, ref) => {
       offsetZ = 2;
       speed = 1;
       break;
-  };
+  }
 
   const currentPos = camera.position.clone();
   const currentTarget = mesh.position.clone();

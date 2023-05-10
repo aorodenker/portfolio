@@ -26,7 +26,7 @@ const App = () => {
 
   return(
     <>
-    <Navigation planetHandler={planetHandler} content={content} setContent={setContent} setHidden={setHidden} setNavCollapsed={setNavCollapsed} navCollapsed={navCollapsed} />
+    <Navigation planetHandler={planetHandler} content={content} setContent={setContent} setHidden={setHidden} setNavCollapsed={setNavCollapsed} />
     <Canvas camera={{ fov: 50, near: 0.1, far: 5000, position: [-157, 151, -139] }} >
       <Suspense fallback={null}>
         <OrbitControls makeDefault enableRotate={controls} enableZoom={controls} />

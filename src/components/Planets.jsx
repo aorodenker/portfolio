@@ -1,9 +1,9 @@
 import { useRef, useEffect } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
-import rotationCalc from '../Utils/rotationCalc.js';
-import orbitCalc from '../Utils/orbitCalc.js';
-import zoomHandler from '../Utils/zoomHandler.js';
+import rotationCalc from '../Utils/rotationCalc';
+import orbitCalc from '../Utils/orbitCalc';
+import zoomHandler from '../Utils/zoomHandler';
 
 const Planets = ({ selected, reset, planetHandler }) => {
   const { camera, controls } = useThree();
@@ -28,7 +28,7 @@ const Planets = ({ selected, reset, planetHandler }) => {
       rotationCalc(delta, ref);
       orbitCalc(state, ref);
       selected > 0 ? zoomHandler(state, delta, selected, ref) : null;
-    };
+    }
   });
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const Planets = ({ selected, reset, planetHandler }) => {
       if (child.type === 'Mesh') {
         child.material.roughness = 1;
         child.material.metalness = 0;
-      };
+      }
     });
   }, [planetsRef]);
 
@@ -45,7 +45,7 @@ const Planets = ({ selected, reset, planetHandler }) => {
       camera.position.set(...originalCamPosition);
       camera.lookAt(...originalCamTarget);
       controls.reset();
-    };
+    }
   }, [reset]);
 
   return (

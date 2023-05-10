@@ -1,4 +1,4 @@
-const Navigation = ({ planetHandler, content, setContent, setHidden, navCollapsed, setNavCollapsed }) => {
+const Navigation = ({ planetHandler, content, setContent, setHidden, setNavCollapsed }) => {
 
   const contentDisplay = (idx) => {
     if (content === idx) {

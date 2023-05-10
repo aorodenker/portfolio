@@ -15,7 +15,7 @@ const TextDisplay = ({ content, hidden, setHidden, navCollapsed }) => {
         return <Atelier setHidden={setHidden} navCollapsed={navCollapsed} />
       case 4:
         return <CowardlyDogs setHidden={setHidden} navCollapsed={navCollapsed} />
-    };
+    }
   };
 
   return hidden ? null : (
