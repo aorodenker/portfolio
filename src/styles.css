@@ -49,65 +49,12 @@ canvas {
 .htmlScreen {
   position: absolute;
   top: 10%;
-  left: 50%;
   right: 2%;
   max-width: 600px;
   max-height: 600px;
   padding: 2%;
   color: beige;
   background: transparent;
-}
-
-@media only screen and (min-width: 2000px) {
-  .htmlScreen {
-    left: auto;
-    right: 2%;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .htmlScreen {
-    position: absolute;
-    top: 35%;
-    left: 0;
-    right: 0;
-    padding: 2%;
-    height: fit-content;
-    font-size: 14px;
-    background-color:rgba(128, 128, 128, 0.562);
-    border-radius: 3px;
-    overflow: scroll;
-    max-height: 65%;
-    transition: all 1s ease;
-  }
-  .re-align {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    max-height: fit-content;
-    transition: all 1s ease;
-  }
-  .me {
-    height: 20vh;
-  }
-}
-@media only screen and (max-width: 1300) {
-  .htmlScreen {
-    position: absolute;
-    top: 35%;
-    left: 0;
-    right: 0;
-    padding: 2%;
-    height: fit-content;
-    font-size: 14px;
-    background-color:rgba(128, 128, 128, 0.562);
-    border-radius: 3px;
-    overflow: scroll;
-    max-height: 65%;
-    transition: all 1s ease;
-  }
 }
 
 .close-html {
@@ -151,4 +98,59 @@ a, .project-title {
 
 .nav-link, .dropdown-item {
   cursor: pointer;
+}
+
+/* Large Monitor */
+@media only screen and (min-width: 2000px) {
+  .htmlScreen {
+    left: auto;
+    right: 2%;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 768px) {
+  .htmlScreen {
+    top: 35%;
+    left: 0;
+    right: 0;
+    padding: 2%;
+    height: fit-content;
+    font-size: 14px;
+    background-color:rgba(128, 128, 128, 0.562);
+    border-radius: 3px;
+    overflow: scroll;
+    max-height: 65%;
+    transition: all 1s ease;
+  }
+  .re-align {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-height: fit-content;
+    transition: all 1s ease;
+  }
+  .me {
+    height: 20vh;
+  }
+}
+
+/* Tablet */
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
+  .htmlScreen {
+    left: auto;
+    padding: 2%;
+    height: fit-content;
+    font-size: 14px;
+    border-radius: 3px;
+    overflow: scroll;
+    max-height: 85%;
+    max-width: 40%;
+    transition: all 1s ease;
+  }
+  .me {
+    height: 30vh;
+  }
 }

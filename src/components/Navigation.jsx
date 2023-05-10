@@ -1,12 +1,25 @@
-const Navigation = ({ planetHandler, setContent, setHidden, navCollapsed, setNavCollapsed }) => {
+const Navigation = ({ planetHandler, content, setContent, setHidden, navCollapsed, setNavCollapsed }) => {
 
   const contentDisplay = (idx) => {
-    setContent(idx);
-    setHidden(false);
+    if (content === idx) {
+      setHidden((hide => {
+        return !hide;
+      }));
+    } else {
+      setContent(idx);
+      setHidden(false);
+    }
+  };
+
+  const navToggle = () => {
+    setTimeout(() => {
+      const nav = document.querySelector('.navbar-toggler');
+      nav.classList.contains('collapsed') ? setNavCollapsed(false) : setNavCollapsed(true);
+    }, 50);
   };
 
   return(
-    <nav className="navbar navbar-expand-lg navbar-dark fixed-top" onClick={() => setNavCollapsed(!navCollapsed)}>
+    <nav className="navbar navbar-expand-lg navbar-dark fixed-top" onClick={() => navToggle()}>
       <a className="navbar-brand" onClick={() => planetHandler(0)} >Andrew Orodenker</a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>

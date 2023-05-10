@@ -12,7 +12,7 @@ const App = () => {
   const [hidden, setHidden] = useState(false);
   const [controls, setControls] = useState(true);
   const [reset, setReset] = useState(false);
-  const [navCollapsed, setNavCollapsed] = useState(true);
+  const [navCollapsed, setNavCollapsed] = useState(false);
 
   useEffect(() => {
     selected < 1 ? setControls(true) : setControls(false);
@@ -26,7 +26,7 @@ const App = () => {
 
   return(
     <>
-    <Navigation planetHandler={planetHandler} setContent={setContent} setHidden={setHidden} setNavCollapsed={setNavCollapsed} navCollapsed={navCollapsed} />
+    <Navigation planetHandler={planetHandler} content={content} setContent={setContent} setHidden={setHidden} setNavCollapsed={setNavCollapsed} navCollapsed={navCollapsed} />
     <Canvas camera={{ fov: 50, near: 0.1, far: 5000, position: [-157, 151, -139] }} >
       <Suspense fallback={null}>
         <OrbitControls makeDefault enableRotate={controls} enableZoom={controls} />
@@ -46,7 +46,7 @@ export default App;
 
 //! FIX:
 // add fun facts to each planet
-// media queries for smaller screens
 // loading bar fix, custom?
 // move planet to the left if content is displayed? might not need if facts are on planets
 // carousel for projects
+// add technologies used for each project
