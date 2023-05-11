@@ -47,8 +47,6 @@ const App = () => {
 export default App;
 
 //! FIX:
-// loading bar fix, custom?
-// add technologies used for each project
 // add fun facts to each planet
 // move planet to the left if content is displayed? might not need if facts are on planets
 // carousel for projects

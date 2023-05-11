@@ -19,6 +19,10 @@ const GymX5000 = ({ setHidden, navCollapsed }) => {
         unique challenge feature that contains interactable 3D trophies created
         using three.js that are awarded upon completing tasks.
       </p>
+      <h6 className="tech-used">Technologies Used</h6>
+      <p className="tech">Frontend: React, Three.js, MUI, Bootstrap</p>
+      <p className="tech">Backend: Node, Express, PostgreSQL, AWS</p>
+      <p className="tech">Testing: Cypress</p>
     </div>
   );
 };

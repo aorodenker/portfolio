@@ -13,6 +13,9 @@ const Atelier = ({ setHidden, navCollapsed }) => {
         Reduced average query speed from 250ms to 35ms through SQL query
         refactoring and indexing.
       </p>
+      <h6 className="tech-used">Technologies Used</h6>
+      <p className="tech">Backend: NGINX, Node, Express, PostgreSQL, AWS</p>
+      <p className="tech">Testing: Cypress, k6, New Relic, Loader.io</p>
     </div>
   );
 };

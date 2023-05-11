@@ -34,7 +34,6 @@ html, body, #root {
   transition: width 0.3s ease;
 }
 
-/* Canvas */
 canvas {
   touch-action: none;
 }
@@ -125,6 +124,16 @@ a, .project-title {
   color: blue;
   text-decoration: none;
   cursor:pointer;
+}
+
+.tech-used {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.tech {
+  margin: 0;
+  text-align: center;
 }
 
 .nav-link, .dropdown-item {
