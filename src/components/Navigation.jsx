@@ -9,6 +9,8 @@ const Navigation = ({ planetHandler, content, setContent, setHidden, setNavColla
       setContent(idx);
       setHidden(false);
     }
+    const nav = document.querySelector('.navbar-collapse');
+    nav.classList.remove('show');
   };
 
   const navToggle = () => {
@@ -34,9 +36,10 @@ const Navigation = ({ planetHandler, content, setContent, setHidden, setNavColla
               Projects
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a className="dropdown-item drop-item" onClick={() => contentDisplay(2)} >GymX5000</a>
-              <a className="dropdown-item drop-item" onClick={() => contentDisplay(3)} >Atelier</a>
-              <a className="dropdown-item drop-item" onClick={() => contentDisplay(4)} >Cowardly Dogs</a>
+              <a className="dropdown-item drop-item" onClick={() => contentDisplay(2)} >Marble Race</a>
+              <a className="dropdown-item drop-item" onClick={() => contentDisplay(3)} >GymX5000</a>
+              <a className="dropdown-item drop-item" onClick={() => contentDisplay(4)} >Atelier</a>
+              <a className="dropdown-item drop-item" onClick={() => contentDisplay(5)} >Cowardly Dogs</a>
             </div>
           </li>
           <li className="nav-item dropdown active">

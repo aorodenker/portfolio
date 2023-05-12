@@ -4,9 +4,6 @@ const GymX5000 = ({ setHidden, navCollapsed }) => {
       <img className="close-html" src="/content/close.png" onClick={() => setHidden(true)} />
       <a className="project-link" href="https://github.com/Slytherin-Blue-Ocean/GymX5000" target="_blank" rel="noopener noreferrer">
         <img className="gymX" src="/content/gymX.jpg" />
-        <h2 className="project-title">
-          GymX5000
-        </h2>
       </a>
       <p>
         Gamified fitness app that brings health,

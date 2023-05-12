@@ -104,6 +104,7 @@ canvas {
 
 .gymX {
   margin-top: 6%;
+  margin-bottom: 5%;
   width: 100%;
 }
 
@@ -162,6 +163,8 @@ a, .project-title {
     overflow: scroll;
     max-height: 65%;
     transition: all 1s ease;
+    margin: auto;
+    max-width: 90%;
   }
   .re-align {
     top: 0;
@@ -169,7 +172,7 @@ a, .project-title {
     left: 0;
     right: 0;
     margin: auto;
-    max-height: fit-content;
+    max-height: 80%;
     transition: all 1s ease;
   }
   .me {

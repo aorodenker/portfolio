@@ -14,7 +14,7 @@ const CowardlyDogs = ({ setHidden, navCollapsed }) => {
         as Q&A.
       </p>
       <h6 className="tech-used">Technologies Used</h6>
-      <p className="tech">Frontend: React, Axios, CSS3, HTML5</p>
+      <p className="tech">React, Axios, CSS3, HTML5</p>
       <p className="tech">Testing: Jest</p>
     </div>
   );
