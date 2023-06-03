@@ -44,8 +44,6 @@ const zoomHandler = (state, delta, idx, ref) => {
 
   const currentPos = camera.position.clone();
   const currentTarget = mesh.position.clone();
-  console.log(mesh.translation())
-  console.log(currentTarget)
   const dir = currentTarget.sub(currentPos);
   const dist = dir.length();
   dir.normalize();
