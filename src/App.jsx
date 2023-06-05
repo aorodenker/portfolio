@@ -46,7 +46,8 @@ const App = () => {
 
 export default App;
 
-//! FIX:
+//! TODO:
+// utilize dialogue feature for html display - web dev simplified
 // rewrite planet calcs using clone()
 // move planet to the left if content is displayed? might not need if facts are on planets
 // carousel for projects
