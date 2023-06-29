@@ -55,7 +55,7 @@ export default App;
 //? Planet facts
 // Mercury:
 // Venus:
-// Earth: I was born on this planet!
+// Earth:
 // Mars:
 // Jupiter:
 // Saturn:
